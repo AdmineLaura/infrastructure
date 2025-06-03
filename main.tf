@@ -133,27 +133,27 @@ output "container_url" {
 # Configure the GitHub provider
 
 
-variable "repo_token" {
+variable "REPO_TOKEN" {
   description = "GitHub token"
   type        = string
   sensitive   = true
 }
 
-variable "repo_owner" {
+variable "REPO_OWNER" {
   description = "GitHub owner"
   type        = string
   sensitive   = true
 }
 
-variable "repo_name" {
+variable "REPO_NAME" {
   description = "GitHub repo"
   type        = string
   sensitive   = true
 }
 
 provider "github" {
-  token = var.repo_token
-  owner = var.repo_owner
+  token = var.REPO_TOKEN
+  owner = var.REPO_OWNER
 }
 
 resource "github_actions_secret" "my_secret" {
