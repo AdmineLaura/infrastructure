@@ -1,4 +1,4 @@
-name: Deploy infrastructure on AWS with terraform
+name: Deploy infrastructure on AWS with Terraform
 
 on:
   push:
@@ -9,6 +9,11 @@ jobs:
   terraform:
     name: Deploy Terraform Job
     runs-on: ubuntu-latest
+
+    env:
+      REPO_OWNER: ${{ secrets.REPO_OWNER }}
+      REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
+      REPO_NAME: ${{ secrets.REPO_NAME }}
 
     steps:
       # Pulls the latest version of your code from the GitHub repository
