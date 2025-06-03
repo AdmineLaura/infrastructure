@@ -171,3 +171,4 @@ resource "github_actions_secret" "my_secret3" {
   repository      = var.repo_name
   secret_name     = "EC2_HOST"
   plaintext_value = aws_instance.ubuntu_instance.public_ip
+}
