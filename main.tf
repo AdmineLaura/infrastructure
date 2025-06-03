@@ -132,24 +132,6 @@ output "container_url" {
 
 # Configure the GitHub provider
 
-
-variable "REPO_TOKEN" {
-  description = "GitHub token"
-  type        = string
-  sensitive   = true
-}
-variable "repo_owner" {
-  description = "GitHub owner"
-  type        = string
-  sensitive   = true
-}
-
-variable "repo_repo" {
-  description = "GitHub repo"
-  type        = string
-  sensitive   = true
-}
-
 provider "github" {
   token = var.repo_token
   owner = var.repo_owner
