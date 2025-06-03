@@ -11,14 +11,16 @@ It utilizes Infrastructure as Code (IaC) principles to ensure consistent and rep
 - **CI/CD Automation**: Integrates with GitHub Actions for automated Terraform workflows.
 
 ## 📁 Repository Structure
+<pre>
 .
 ├── .github/
 │   └── workflows/        # GitHub Actions workflows
 ├── main.tf               # Main Terraform configuration
 ├── variables.tf          # Input variable definitions
 ├── outputs.tf            # Output variable definitions
-├── terraform.tfvars      # Variable values
+├── terraform.tfvars      # Variable values (excluded from version control)
 └── README.md             # Project documentation
+</pre>
 
 ## Prerequisites
 
@@ -28,12 +30,13 @@ It utilizes Infrastructure as Code (IaC) principles to ensure consistent and rep
 
 ## Usage
 
-1. **Clone the repository**:
+Clone the repository:
 
-   ```bash
-   git clone https://github.com/AdmineLaura/infrastructure.git
-   cd infrastructure
-
+   ```git clone https://github.com/AdmineLaura/infrastructure.git```
+   
+   ```cd infrastructure```
+<br>
+<br>
 
  Initialize Terraform:
  ```terraform init```
@@ -41,4 +44,13 @@ It utilizes Infrastructure as Code (IaC) principles to ensure consistent and rep
  Review the execution plan:
  ```terraform plan```
 
- 
+ Apply the configuration:
+ ```terraform apply```
+
+Confirm the action when prompted.
+
+<br>
+
+## Security Considerations
+- Sensitive Data: Do not commit sensitive information (e.g., AWS credentials, private keys) to version control. Use environment variables or secret management tools.
+- State Management: Consider using remote state backends (e.g., AWS S3 with DynamoDB locking) for collaborative environments.
