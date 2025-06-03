@@ -145,7 +145,7 @@ variable "repo_owner" {
   sensitive   = true
 }
 
-variable "repo_repo" {
+variable "repo_name" {
   description = "GitHub repo"
   type        = string
   sensitive   = true
