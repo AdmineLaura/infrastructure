@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      REPO_OWNER: ${{ secrets.REPO_OWNER }}
+     # REPO_OWNER: ${{ secrets.REPO_OWNER }}
       REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
-      REPO_NAME: ${{ secrets.REPO_NAME }}
+     # REPO_NAME: ${{ secrets.REPO_NAME }}
 
     steps:
       # Pulls the latest version of your code from the GitHub repository
