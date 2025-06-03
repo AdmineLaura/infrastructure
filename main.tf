@@ -138,26 +138,36 @@ variable "REPO_TOKEN" {
   type        = string
   sensitive   = true
 }
+variable "repo_owner" {
+  description = "GitHub owner"
+  type        = string
+  sensitive   = true
+}
+
+variable "repo_repo" {
+  description = "GitHub repo"
+  type        = string
+  sensitive   = true
+}
 
 provider "github" {
-  token = var.REPO_TOKEN
-  owner = AdmineLaura
+  token = var.repo_token
+  owner = var.repo_owner
 }
 
 resource "github_actions_secret" "my_secret" {
-  repository      = application
+  repository      = var.repo_name
   secret_name     = "EC2_HOST_PRIVATE_KEY"
   plaintext_value = tls_private_key.ssh_key.private_key_pem
 }
 
 resource "github_actions_secret" "my_secret2" {
-  repository      = application
+  repository      = var.repo_name
   secret_name     = "EC2_HOST_PUBLIC_KEY"
   plaintext_value = tls_private_key.ssh_key.public_key_openssh
 }
 
 resource "github_actions_secret" "my_secret3" {
-  repository      = application
+  repository      = var.repo_name
   secret_name     = "EC2_HOST"
   plaintext_value = aws_instance.ubuntu_instance.public_ip
-}
