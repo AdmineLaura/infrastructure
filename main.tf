@@ -139,15 +139,9 @@ variable "REPO_TOKEN" {
   sensitive   = true
 }
 
-variable "REPO_OWNER" {
-  description = "GitHub owner"
-  type        = string
-  sensitive   = true
-}
-
 provider "github" {
   token = var.REPO_TOKEN
-  owner = var.REPO_OWNER
+  owner = AdmineLaura
 }
 
 resource "github_actions_secret" "my_secret" {
