@@ -1,4 +1,4 @@
-name: !!! Destroy infrastructure on AWS with Terraform
+name: DDestroy infrastructure on AWS with Terraform
 
 on:
   workflow_dispatch:
