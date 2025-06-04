@@ -5,7 +5,7 @@ on:
 
 jobs:
   terraform:
-    name: Deploy Terraform Job
+    name: Destroy Terraform infra
     runs-on: ubuntu-latest
 
     env:
